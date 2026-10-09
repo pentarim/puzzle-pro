@@ -1,0 +1,40 @@
+name: puzzle_solver
+description: Jigsaw puzzle solver - live colour pre-sort overlay and single-piece location finder.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  # opencv_dart 2.x needs Dart >= 3.10 / Flutter >= 3.38.1 (native-assets hooks).
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.1"
+
+# After `flutter create`, run `flutter pub upgrade --major-versions` to bump
+# every dependency to its current major (these constraints are known-good
+# lower bounds, not necessarily the latest).
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.11.0
+  opencv_dart: ^2.3.0
+  mobile_scanner: ^6.0.0
+  image_picker: ^1.1.2
+  path_provider: ^2.1.4
+  shared_preferences: ^2.3.0
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+# dartcv4 default modules (core, imgproc, imgcodecs) are all this app needs.
+# Uncomment to shrink the native build further / speed up the first compile.
+# hooks:
+#   user_defines:
+#     dartcv4:
+#       include_modules:
+#         - imgproc
+#         - imgcodecs
